@@ -712,7 +712,7 @@ module Searchkick
     end
 
     def set_filters(payload, filters)
-      if options[:aggs]
+      unless options[:aggs]
         payload[:post_filter] = {
           bool: {
             filter: filters
